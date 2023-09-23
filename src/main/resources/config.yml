@@ -1,0 +1,85 @@
+database:
+  host: "127.0.0.1"
+  port: 3306
+  dbName: "database"
+  username: "root"
+  password: ""
+  tablePrefix: "punishments_"
+  ssl: false
+
+
+wrongSyntax: "&c&lPunishments &8>> &7Wrong syntax!"
+noPerm: "&c&lPunishments &8>> &7You dont have required permission!"
+targetIsNull: "&c&lPunishments &8>> &7Player %player% doesnt exists!"
+
+permissions:
+  ban: "punishments.ban"
+  unBan: "punishments.unban"
+  mute: "punishments.mute"
+  unMute: "punishments.unmute"
+  blackListAdd: "punishments.blacklist.add"
+  blackListRemove: "punishments.blacklist.remove"
+  kick: "punishments.kick"
+
+
+bans:
+  ban:
+    admin:
+      temp: "&c&lPunishments &8>> &7You banned player %player% for %time%&7!"
+      perm: "&c&lPunishments &8>> &7You permanently banned player %player%&7!"
+  unBan:
+    target: "&c&lPunishments &8>> &7You got unbanned by &a%player%&7!"
+    admin: "&c&lPunishments &8>> &7You unbanned &a%player%&7!"
+  alreadyBanned: "&c&lPunishments &8>> &7Player &a%player% &7is already banned!"
+  alreadyUnBanned: "&c&lPunishments &8>> &7Player &a%player% &7is already unbanned!"
+  joinEvent:
+    temp:
+      - "&cBan"
+      - " "
+      - "&cYou have been banned from this Server"
+      - "&a%reason%"
+      - "&c%time%"
+      - " "
+    perm:
+      - "&cBan"
+      - " "
+      - "&cYou have been banned from this Server"
+      - "&a%reason%"
+      - "&cPERM"
+      - " "
+
+kick:
+  targetIsOffline: "&c&lPunishments &8>> &7Player &a%player% &7is offline"
+  listMessage:
+  - "&cKick"
+  - " "
+  - "&cYou got kicked from this Server"
+  - "&a%reason%"
+  - " "
+
+mutes:
+  mute:
+    target:
+      temp: "&c&lPunishments &8>> &7You have been muted for &a%time% &7by &a%player%&7!"
+      perm: "&c&lPunishments &8>> &7You have been permanently muted by &a%player%&7!"
+    admin:
+      temp: "&c&lPunishments &8>> &7You muted player &a%player% &7for &a%time%&7!"
+      perm: "&c&lPunishments &8>> &7You permanently muted player &a%player%&7!"
+  unMute:
+    target: "&c&lPunishments &8>> &7You got unmuted by &a%player%&7!"
+    admin: "&c&lPunishments &8>> &7You unmuted &a%player%&7!"
+  alreadyMuted: "&c&lPunishments &8>> &7Player &a%player% &7is already muted&7!"
+  alreadyUnMuted: "&c&lPunishments &8>> &7Player &a%player% &7is already unmuted&7!"
+  chatEvent: "&c&lPunishments &8>> &7You are currently muted, left &a%time%&7!"
+
+blackList:
+  add: "&c&lPunishments &8>> &7You successfully added Player to list &a%player%&7!"
+  remove: "&c&lPunishments &8>> &7You successfully removed Player from list &a%player%&7!"
+  alreadyAdded: "&c&lPunishments &8>> &7Player you want to add is already in list &a%player%&7!"
+  alreadyRemoved: "&c&lPunishments &8>> &7Player isn't in list &a%player%&7!"
+  joinEvent:
+  - "&cBlack-List"
+  - " "
+  - "&aYou are on Black List of this Server"
+  - ""
+  - ""
