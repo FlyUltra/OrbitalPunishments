@@ -9,6 +9,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.LightningStrike;
 import org.bukkit.entity.Player;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class ProfileController {
@@ -29,7 +30,8 @@ public class ProfileController {
         sender.sendMessage(Utils.colorize(" "));
         for (int i = 0; i < 5; i++) {
             Ban ban = getBans.get(i);
-            sender.sendMessage(Utils.colorize("&7"+(i+1)+". &a" + Utils.formatDate(ban.getDateOfCreation())+ " &7- &a" + Utils.formatDate(ban.getDateOfExpire()) + " &7"+ ban.getReason()));
+            Timestamp timestamp = new Timestamp(ban.getDateOfCreation());
+            sender.sendMessage(Utils.colorize("&7"+(i+1)+". &a" + timestamp+ " &7- &a" + Utils.formatDate((ban.getDateOfExpire() - ban.getDateOfCreation())) + " &7"+ ban.getReason()));
         }
         sender.sendMessage(Utils.colorize(" "));
         sender.sendMessage(Utils.colorize("&8------------------"));
@@ -45,7 +47,8 @@ public class ProfileController {
         sender.sendMessage(Utils.colorize(" "));
         for (int i = 0; i < getMutes.size(); i++) {
             Mute mute = getMutes.get(i);
-            sender.sendMessage(Utils.colorize("&7"+(i+1)+". &a" + Utils.formatDate(mute.getDateOfCreation())+ " &7- &a" + Utils.formatDate(mute.getDateOfExpire()) + " &7"+ mute.getReason()));
+            Timestamp timestamp = new Timestamp(mute.getDateOfCreation());
+            sender.sendMessage(Utils.colorize("&7"+(i+1)+". &a" + timestamp+ " &7- &a" + Utils.formatDate((mute.getDateOfExpire() - mute.getDateOfCreation())) + " &7"+ mute.getReason()));
         }
         sender.sendMessage(Utils.colorize(" "));
         sender.sendMessage(Utils.colorize("&8------------------"));

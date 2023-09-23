@@ -34,11 +34,7 @@ public class Mute {
             return true;
         }
 
-        if (dateOfExpire < System.currentTimeMillis()) {
-            return true;
-        }
-
-        return false;
+        return dateOfExpire > System.currentTimeMillis();
     }
 
 }

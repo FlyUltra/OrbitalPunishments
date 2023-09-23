@@ -57,7 +57,6 @@ public class BanAPI {
         } else {
             stringList = plugin.getCfg().get().getStringList("bans.joinEvent.temp");
         }
-        System.out.println("STRING LIST: " + stringList);
 
         String kickString = stringList.toString()
                 .replace("[", "")
